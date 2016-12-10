@@ -19,17 +19,17 @@
     </section>
 
     <section class="main-content">
-How to run the code:<p>
-Create a new file name whatever.cpp you want and then click run.<p>
-You can have fun with the minesweeper.<p>
+      <p>The code in here:</p>
 
-      <p>The code in here:
-<pre><code>
-#include &lt;iostream&gt;
-#include &lt;ctime&gt;
+<h1>
+<a id="include-iostream" class="anchor" href="#include-iostream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include &lt;iostream&gt;</h1>
+
+<h1>
+<a id="include-ctime" class="anchor" href="#include-ctime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include &lt;ctime&gt;</h1>
 
 <p>using namespace std;</p>
-const int areaLen=12;<p>
+
+<p>const int areaLen=12;
 const int num=10;</p>
 
 <p>void food(int [][areaLen]);
@@ -50,16 +50,23 @@ bool win(int [][areaLen], int [][areaLen]);</p>
     refresh(area);
     cin&gt;&gt;x&gt;&gt;y;
     while(x&lt;1 || x&gt;10 || y&lt;1 || y&gt;10){
-        cout&lt;&lt;"Please input correctly"&lt;&gt;x&gt;&gt;y;
+        cout&lt;&lt;"请在正确的范围内输入"&lt;&lt;endl;
+        cin&gt;&gt;x&gt;&gt;y;
     }
     while(end(x,y,hide)){
         if(win(area,hide)){
-            cout&lt;&lt;"\n you win!"&lt;&gt;x&gt;&gt;y;
+            cout&lt;&lt;"\n you are win!"&lt;&lt;endl;
+            return 0;
+        }
+        area[x][y]=hide[x][y];
+        refresh(area);
+        cin&gt;&gt;x&gt;&gt;y;
     }
     return 0;
 }</p>
 
-<p>void initArea(int area[areaLen][areaLen])
+<p>//初始化游戏区域
+void initArea(int area[areaLen][areaLen])
 {
     int i,j;
     for(i=0; i&lt;areaLen; ++i)
@@ -71,14 +78,15 @@ bool win(int [][areaLen], int [][areaLen]);</p>
     area[i][j]=9;
 }</p>
 
-<p>void initHide(int hide[areaLen][areaLen])
+<p>//初始化隐藏的区域
+void initHide(int hide[areaLen][areaLen])
 {
     for(int i=0; i&lt;areaLen; ++i)
     for(int j=0; j&lt;areaLen; ++j)
     hide[i][j]=0;
 }</p>
 
-<p>//generate mine
+<p>//随机产生10个雷并存储
 void food(int hide[areaLen][areaLen])
 {
     int x=4,y=4,count=0,i=0;
@@ -93,8 +101,8 @@ void food(int hide[areaLen][areaLen])
         }
     }</p>
 
-for(i=1; i&lt;areaLen-1; ++i){
-    for(int j=1; j&lt;areaLen-1; ++j){
+<pre><code>for(i=1; i&amp;lt;areaLen-1; ++i){
+    for(int j=1; j&amp;lt;areaLen-1; ++j){
         count=0;
         if(hide[i][j]==-1)
         continue;
@@ -117,7 +125,7 @@ for(i=1; i&lt;areaLen-1; ++i){
         hide[i][j]=count;
     }
 }
-
+</code></pre>
 
 <p>}</p>
 
@@ -134,10 +142,10 @@ for(i=1; i&lt;areaLen-1; ++i){
         }
         cout&lt;&lt;endl;
     }
-    cout&lt;&lt;"\n please input x and y"&lt;&lt;endl;
+    cout&lt;&lt;"\n 请输入要点开的坐标，以X  Y的形式(x,y在1到10之间)"&lt;&lt;endl;
 }</p>
 
-<p>//
+<p>//判断是否结束
 bool end(int x, int y, int hide[areaLen][areaLen])
 {
     if(hide[x][y]==-1){
@@ -161,8 +169,7 @@ bool end(int x, int y, int hide[areaLen][areaLen])
     return 1;
     else return 0;
 }</p>
-</code></pre>
-      
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/pangtouyuyu/minesweeper">Minesweeper</a> is maintained by <a href="https://github.com/pangtouyuyu">pangtouyuyu</a>.</span>
 
@@ -174,4 +181,3 @@ bool end(int x, int y, int hide[areaLen][areaLen])
   
   </body>
 </html>
-
