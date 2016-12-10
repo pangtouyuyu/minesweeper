@@ -46,7 +46,7 @@ bool win(int [][areaLen], int [][areaLen]);</p>
     refresh(area);
     cin&gt;&gt;x&gt;&gt;y;
     while(x&lt;1 || x&gt;10 || y&lt;1 || y&gt;10){
-        cout&lt;&lt;"请在正确的范围内输入"&lt;&lt;endl;
+        cout&lt;&lt;"Please input the x and y between 1 and 10"&lt;&lt;endl;
         cin&gt;&gt;x&gt;&gt;y;
     }
     while(end(x,y,hide)){
@@ -61,7 +61,7 @@ bool win(int [][areaLen], int [][areaLen]);</p>
     return 0;
 }</p>
 
-<p>//初始化游戏区域
+<p>
 void initArea(int area[areaLen][areaLen])
 {
     int i,j;
@@ -74,7 +74,7 @@ void initArea(int area[areaLen][areaLen])
     area[i][j]=9;
 }</p>
 
-<p>//初始化隐藏的区域
+<p>
 void initHide(int hide[areaLen][areaLen])
 {
     for(int i=0; i&lt;areaLen; ++i)
@@ -82,7 +82,7 @@ void initHide(int hide[areaLen][areaLen])
     hide[i][j]=0;
 }</p>
 
-<p>//随机产生10个雷并存储
+<p>//generate mine and save
 void food(int hide[areaLen][areaLen])
 {
     int x=4,y=4,count=0,i=0;
@@ -138,10 +138,10 @@ for(i=1; i&amp;lt;areaLen-1; ++i){
         }
         cout&lt;&lt;endl;
     }
-    cout&lt;&lt;"\n 请输入要点开的坐标，以X  Y的形式(x,y在1到10之间)"&lt;&lt;endl;
+    cout&lt;&lt;"\n please input which point you want to click as "x y"(x,y between 1 and 10)"&lt;&lt;endl;
 }</p>
 
-<p>//判断是否结束
+<p>//see if game is over
 bool end(int x, int y, int hide[areaLen][areaLen])
 {
     if(hide[x][y]==-1){
