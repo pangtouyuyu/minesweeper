@@ -20,13 +20,9 @@
 
     <section class="main-content">
       <p>The code in here:</p>
-
-<h1>
-<a id="include-iostream" class="anchor" href="#include-iostream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include &lt;iostream&gt;</h1>
-
-<h1>
-<a id="include-ctime" class="anchor" href="#include-ctime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include &lt;ctime&gt;</h1>
-
+<pre><code>
+#include &lt;iostream&gt;<p>
+#include &lt;ctime&gt;<p>      
 <p>using namespace std;</p>
 
 <p>const int areaLen=12;
@@ -101,7 +97,7 @@ void food(int hide[areaLen][areaLen])
         }
     }</p>
 
-<pre><code>for(i=1; i&amp;lt;areaLen-1; ++i){
+for(i=1; i&amp;lt;areaLen-1; ++i){
     for(int j=1; j&amp;lt;areaLen-1; ++j){
         count=0;
         if(hide[i][j]==-1)
@@ -125,7 +121,7 @@ void food(int hide[areaLen][areaLen])
         hide[i][j]=count;
     }
 }
-</code></pre>
+
 
 <p>}</p>
 
@@ -169,6 +165,7 @@ bool end(int x, int y, int hide[areaLen][areaLen])
     return 1;
     else return 0;
 }</p>
+</code></pre>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/pangtouyuyu/minesweeper">Minesweeper</a> is maintained by <a href="https://github.com/pangtouyuyu">pangtouyuyu</a>.</span>
